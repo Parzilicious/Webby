@@ -1,0 +1,96 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(locations.jpg);
+    background-size: cover;
+    background-position-y: 10%;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6e6321;
+}
+
+header .group-name {
+    color: white;
+    font-weight: 1000;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: larger;
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    color: white;
+    border-radius: 10px;
+}
+
+header ul li a:hover, 
+header ul li a.active {
+    background: white;
+    color: black;
+    transition: .3s;
+}
+
+.location {
+    color: black;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 350px;
+    font-size: xx-large;
+}
+
+.data-container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.data-container .data2 img {
+    height: 700px;
+}
+
+.text {
+    color: white;
+    font-size: xx-large;
+    display: flex;
+    margin-left: 250px;
+    margin-top: -100px;
+}
+
+.map img {
+    width: 700px;
+}
+.map {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
