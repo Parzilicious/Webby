@@ -1,0 +1,107 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(GST\ CAM\ 956-03.jpg);
+    background-size: cover;
+    background-position-y: 10%;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #114a63;
+}
+
+header .group-name {
+    color: white;
+    font-weight: 1000;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: larger;
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    color: white;
+    border-radius: 10px;
+}
+
+header ul li a:hover, 
+header ul li a.active {
+    background: white;
+    color: black;
+    transition: .3s;
+}
+
+.about {
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    margin-top: 350px;
+    letter-spacing: 2px;
+    font-size: xx-large;
+}
+
+.vision-text,
+.mission-text,
+.goal-text {
+    color: white;
+    font-size: x-large;
+}
+
+.vision-text h2, 
+.mission-text h2,
+.goal-text h2{
+    display: flex;
+    justify-content: center;
+}
+
+.vision-container img,
+.mission-container img,
+.goal-container img {
+    height: 300px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.vision-container, 
+.mission-container {
+    margin-top: 100px;  
+    display: flex;  
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.goal-container {
+    margin-top: 100px;  
+    display: flex;  
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+}
+
