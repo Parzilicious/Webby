@@ -10,44 +10,45 @@
     <div class="navbar-container">
         <header>
             <a href="" class="group-name">Triple J</a>
-            <ul>
+            <nav>
+            <ul id="menuList">
                 <li><a href="" class="active">Home</a></li>
                 <li><a href="">About us</a></li>
                 <li><a href="">Locations</a></li>
             </ul>
+            </nav>
+            <img src="menu.png" onclick="toggleMenu()">
         </header>
     </div>
-
     <div class="counter-container">
-        <h3>Trees Planted</h3>
-        <h3>Artificial Reefs <br> &nbsp &nbsp &nbsp &nbsp Made</h3>
-    </div>
-    <div class="progress-container">
-        <div class="progress-bar1" data-label1="0"></div>
-        <div class="progress-bar2" data-label2="0"></div>
-    </div>
-
-    <div class="donation-container">
-        <div class="trees">
-            <h2 class="trees-text">Help us plant <br> &nbsp &nbsp &nbsp&nbspTrees</h2>
-            <div class="amounts1">
-                <button><b>50</b></button>
-                <button><b>100</b></button>
-                <button><b>500</b></button>
-                <button><b>1000</b></button>
-                <button class="custom"><b>CUSTOM AMOUNT</b></button>
-                <button class="donate"><b>DONATE</b></button>
+        <div class="trees-container">
+            <h3>Trees Planted</h3>
+            <div class="progress-bar1" data-label1="0"></div>
+            <div class="trees">
+                <h2 class="trees-text">Help us plant Trees</h2>
+                <div class="amounts1">
+                    <button><b>50</b></button>
+                    <button><b>100</b></button>
+                    <button><b>500</b></button>
+                    <button><b>1000</b></button>
+                    <button class="custom"><b>CUSTOM AMOUNT</b></button>
+                    <button class="donate"><b>DONATE</b></button>
+                </div>
             </div>
         </div>
-        <div class="corals">
-            <h2 class="corals-text">&nbspHelp us make <br> Artificial Reefs</h2>
-            <div class="amounts2">
-                <button><b>1000</b></button>
-                <button><b>2000</b></button>
-                <button><b>3000</b></button>
-                <button><b>5000</b></button>
-                <button class="custom"><b>CUSTOM AMOUNT</b></button>
-                <button class="donate"><b>DONATE</b></button>
+        <div class="corals-container">
+            <h3>Artificial Reefs <br>Made</h3>
+            <div class="progress-bar2" data-label2="0"></div>
+            <div class="corals">
+                <h2 class="corals-text">&nbspHelp us make <br> Artificial Reefs</h2>
+                <div class="amounts2">
+                    <button><b>1000</b></button>
+                    <button><b>2000</b></button>
+                    <button><b>3000</b></button>
+                    <button><b>5000</b></button>
+                    <button class="custom"><b>CUSTOM AMOUNT</b></button>
+                    <button class="donate"><b>DONATE</b></button>
+                </div>
             </div>
         </div>
     </div>
@@ -59,7 +60,24 @@
             <a href=""><img class="icon" src="insta.png" alt=""></a>
             <a href=""><img class="icon" src="yt.png" alt=""></a>
         </div>
-    </div>s
+    </div>
     
+    <script>
+
+        var menuList = document.getElementById("menuList");
+        
+        menuList.style.maxHeight = "0px";
+
+        function toggleMenu() {
+            if(menuList.style.maxHeight == "0px" || menuList.style.maxHeight === "") {
+                menuList.style.maxHeight = "130px";
+            }
+            else {
+                menuList.style.maxHeight = "0px";
+            }
+
+        }
+
+    </script>
 </body>
 </html>
