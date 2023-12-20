@@ -20,8 +20,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #6e6321;
+    background-color: #473C38;
 }
+
+header img {
+    width: 50px;
+    display: none;
+ }
 
 header .group-name {
     color: white;
@@ -58,12 +63,12 @@ header ul li a.active {
 }
 
 .location {
-    color: black;
+    color: white;
     display: flex;
     justify-content: center;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-top: 350px;
+    margin-top: 200px;
     font-size: xx-large;
 }
 
@@ -83,6 +88,8 @@ header ul li a.active {
     display: flex;
     margin-left: 250px;
     margin-top: -100px;
+    text-align: start;
+    white-space: pre-line;
 }
 
 .map img {
@@ -93,4 +100,85 @@ header ul li a.active {
     justify-content: center;
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+@media only screen and (max-width:1200px) {
+
+    body {
+       background-position: center;
+    }
+ 
+    header ul {
+        width: 100%;
+        background-color: #a18663;
+        position: absolute;
+        top: 90px;
+        right: 0;
+        z-index: 2;
+        padding: 20px;
+    }
+ 
+    header .group-name {
+        margin-left: 50px;
+        color: white;
+    }
+ 
+    header ul li a {
+        color: white;
+    }
+ 
+    header img {
+        display: block;
+        margin-right: -90px;
+    }
+
+    header img {
+        width: 50px;
+        filter: invert(100%);
+     }
+
+    .location h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: xx-large;
+        text-align: center;
+        margin-top: -50px;
+     }
+
+     .data-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 30px;
+     }
+
+     .data-container .data1 img {
+        width: 370px;
+        height: 400px;
+        display: flex;
+        margin-bottom: 70px;
+     }
+
+     .data-container .data2 img {
+        width: 250px;
+        height: 500px;
+     }
+
+     .text {
+        margin-top: 20px;
+        text-align: center;
+        margin-left: 0;
+        font-size: medium;
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        padding: 10px;
+     }
+
+     .map img {
+        width: 300px;
+     }
+
 }
