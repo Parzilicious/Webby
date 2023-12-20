@@ -43,11 +43,6 @@ header ul {
    align-items: center;
 }
 
-#menuList {
-   display: none;
-   transition: max-height 0.3s ease-in-out;
-}
-
 header ul li {
    list-style: none;
    margin-left: 20px;
@@ -280,6 +275,11 @@ header ul li a.active {
 
    header .group-name {
        margin-left: 50px;
+   }
+
+   #menuList {
+      display: none;
+      transition: max-height 0.3s ease-in-out;
    }
 
    header ul li a {
