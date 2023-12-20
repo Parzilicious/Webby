@@ -63,18 +63,14 @@
     
     <script>
 
-        var menuList = document.getElementById("menuList");
-        
-        menuList.style.maxHeight = "0px";
+         var menuList = document.getElementById("menuList");
 
         function toggleMenu() {
-            if(menuList.style.maxHeight == "0px" || menuList.style.maxHeight === "") {
-                menuList.style.maxHeight = "130px";
+            if (menuList.style.display === '' || menuList.style.display === 'none') {
+                menuList.style.display = 'flex';
+            } else {
+                menuList.style.display = 'none';
             }
-            else {
-                menuList.style.maxHeight = "0px";
-            }
-
         }
 
     </script>
