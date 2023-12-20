@@ -20,19 +20,19 @@
             <img src="menu.png" onclick="toggleMenu()">
         </header>
     </div>
-    <div class="counter-container">
+   <div class="counter-container">
         <div class="trees-container">
             <h3>Trees Planted</h3>
             <div class="progress-bar1" data-label1="0"></div>
             <div class="trees">
                 <h2 class="trees-text">Help us plant Trees</h2>
                 <div class="amounts1">
-                    <button><b>50</b></button>
-                    <button><b>100</b></button>
-                    <button><b>500</b></button>
-                    <button><b>1000</b></button>
-                    <button class="custom"><b>CUSTOM AMOUNT</b></button>
-                    <button class="donate"><b>DONATE</b></button>
+                    <button id="1" onclick="donate(50)">50</button>
+                    <button id="2" onclick="donate(100)"><b>100</b></button>
+                    <button id="3" onclick="donate(500)"><b>500</b></button>
+                    <button id="4" onclick="donate(1000)"><b>1000</b></button>
+                    <input class="custom" id="custom" type="text" placeholder="Custom: Enter Amount then click donate">
+                    <button class="donate" id="donate" onclick="donatecalc()"><b>DONATE</b></button>
                 </div>
             </div>
         </div>
@@ -42,17 +42,16 @@
             <div class="corals">
                 <h2 class="corals-text">&nbspHelp us make <br> Artificial Reefs</h2>
                 <div class="amounts2">
-                    <button><b>1000</b></button>
-                    <button><b>2000</b></button>
-                    <button><b>3000</b></button>
-                    <button><b>5000</b></button>
-                    <button class="custom"><b>CUSTOM AMOUNT</b></button>
-                    <button class="donate"><b>DONATE</b></button>
+                    <button id="2.1" onclick="donate(1000)"><b>1000</b></button>
+                    <button id="2.2" onclick="donate(2000)"><b>2000</b></button>
+                    <button id="2.3" onclick="donate(3000)"><b>3000</b></button>
+                    <button id="2.4" onclick="donate(5000)"><b>5000</b></button>
+                    <input class="custom" id="custom2" type="text" placeholder="Custom: Enter Amount then click donate">
+                    <button class="donate" id="donate2" onclick="donatecalc()"><b>DONATE</b></button>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="socials-container">
         <h2>Triple J Socials</h2>
         <div class="icon-container">
