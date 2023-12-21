@@ -106,7 +106,8 @@
    font-weight: bold;
  }
  
- .progress-bar,.progress-bar2 {
+ .progress-bar,
+.progress-bar2 {
    position: relative;
    width: 500px;
    height: 3em;
