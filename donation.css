@@ -119,7 +119,7 @@ input {
 }
 
 .name-text,
-.number-text {
+.number-text, .msg-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
