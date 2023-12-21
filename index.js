@@ -37,7 +37,7 @@ function donatecalc(){
         amt = 500;
     }
     else if(active === '4'){
-        amt = 10000;
+        amt = 1000;
     }
     else if(active === '2.1'){
         amt2 = 1000;
