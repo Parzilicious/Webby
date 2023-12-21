@@ -481,12 +481,14 @@
     color: white;
  }
  
- .amounts1 button.custom,
- .amounts1 button.donate,
- .amounts2 button.custom,
- .amounts2 button.donate {
-    width: 100%;
-    margin-top: 10px; 
+.amounts1 input.custom,
+.amounts2 input.custom,
+.amounts1 button.donate,
+.amounts2 button.donate{
+   width: 100%;
+   padding: 15px;
+   margin-top: 10px; 
+   text-align: center;
  }
  
  .corals-container {
