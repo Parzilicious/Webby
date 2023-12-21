@@ -175,6 +175,7 @@ header ul li a.active {
         justify-content: center;
         font-weight: bold;
         padding: 10px;
+        white-space: wrap;
      }
 
      .map img {
