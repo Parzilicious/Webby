@@ -86,7 +86,7 @@ function donatecalc(){
     
         sessionStorage.setItem('amt', amtValue);
 
-        var totalamt = parseFloat(sessionStorage.getItem('totalamt'));
+        var totalamt = parseFloat(sessionStorage.getItem('totalamt')) || 0;
         totalamt += amtValue;
         sessionStorage.setItem('totalamt', totalamt.toString());
     
