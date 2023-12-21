@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url(33136.jpg);
+    background-image: url(fish.png);
     background-size: cover;
     margin: 0;
     padding: 0;
@@ -72,18 +72,19 @@ fieldset {
 .fieldset-container {
     display: flex;
     justify-content: center;
-    margin-top: 200px;
-    margin-bottom: 50px;
+    margin-top: 125px;
+    margin-bottom: 100px;
 }
 
 fieldset h2 {
     display: flex;
     justify-content: center;
-    
+    font-size: x-large;
 }
 
 fieldset label {
     margin-bottom: 5px;
+    font-size: large;
 }
 
 .name {
@@ -117,9 +118,37 @@ input {
     justify-content: center;
 }
 
+.name-text,
+.number-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -30px;
+    font-size: small;
+}
+
 .message textarea {
     border-radius: 10px;
     border: none;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button button {
+    padding: 10px;
+    width: 50%;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+}
+
+button:hover {
+    color: white;
+    background-color: black;
 }
 
 @media only screen and (max-width:700px) {
