@@ -51,11 +51,19 @@ function donatecalc(){
         if (!isNaN(parseFloat(custom.value))) {
             amt = parseFloat(custom.value);
         }
+        else {
+            alert('Input is not a number');
+            return;
+        }
     }
     else if(active === 'custom2'){
         var custom = document.getElementById(active);
         if (!isNaN(parseFloat(custom2.value))) {
             amt = parseFloat(custom2.value);
+        }
+        else {
+            alert('Input is not a number');
+            return;
         }
     }
     else {
