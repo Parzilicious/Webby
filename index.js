@@ -81,7 +81,6 @@ function donatecalc(){
 
    if (tree.includes(active)) {
         sessionStorage.setItem('kind', 'tree');
-        sessionStorage.setItem('amt', amt);
 
         var amtValue = parseFloat(amt) || 0;  
     
