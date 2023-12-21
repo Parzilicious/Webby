@@ -22,7 +22,7 @@ document.addEventListener('click', function(event) {
 });
 
 var amt;
-var amt2;
+var amt2 =0; 
 localStorage.setItem('amt', amt);
 localStorage.setItem('amt2', amt2);
 
@@ -62,7 +62,7 @@ function donatecalc(){
         }
     }
     else if(active === 'custom2'){
-        var custom = document.getElementById(active);
+        var custom2 = document.getElementById(active);
         if (!isNaN(parseFloat(custom2.value))) {
             amt2 = parseFloat(custom2.value);
         }
@@ -83,63 +83,70 @@ function donatecalc(){
         localStorage.setItem('kind', 'tree');
         localStorage.setItem('amt', amt);
 
-        let totalamt = parseFloat(localStorage.getItem('totalamt'));
+        var totalamt = parseFloat(localStorage.getItem('totalamt'));
         totalamt += amt;
         localStorage.setItem('totalamt', totalamt.toString());
     
         console.log(totalamt);
-    
     }
-    else if (coral.includes(active)){
+    else if (coral.includes(active)) {
         localStorage.setItem('kind', 'coral');
-
-        localStorage.setItem('amt2', amt2);
-
-        let totalamt2 = parseFloat(localStorage.getItem('totalamt2'));
-        totalamt2 += amt2;
+    
+        var amt2Value = parseFloat(amt2) || 0;  
+    
+        localStorage.setItem('amt2', amt2Value);
+    
+        var totalamt2 = parseFloat(localStorage.getItem('totalamt2')) || 0;
+        totalamt2 += amt2Value;
         localStorage.setItem('totalamt2', totalamt2.toString());
     
         console.log(totalamt2);
     }
-
 
     var info = document.getElementById('info');
       info.click();
 
 }
 
-var nonoptional;
 console.log(localStorage.getItem('totalamt'));
 console.log(localStorage.getItem('totalamt2'));
+
+var pbar = document.getElementById('pbar');
+
+function pbarTree() {
+  var totalamt = parseFloat(localStorage.getItem('totalamt')) || 0;
+
+  var limit = 1000000;
+  var width = (totalamt / limit) * 100;
+  width = Math.min(width, 100);
+
+  pbar.style.setProperty('--width', width + '%');
+  pbar.setAttribute('data-label', width + '%');
+  console.log(width);
+}
+
+pbarTree();
+
+var pbar2 = document.getElementById('pbar2');
+
+function pbarCoral() {
+  var totalamt2 = parseFloat(localStorage.getItem('totalamt2')) || 0;
+
+  var limit = 1000000;
+  var width = (totalamt2 / limit) * 100;
+  width = Math.min(width, 100);
+
+  pbar2.style.setProperty('--width', width + '%');
+  pbar2.setAttribute('data-label2', width + '%');
+  console.log(width);
+}
+
+pbarCoral();
 
 var tree = ['1','2','3','4','custom'];
 var coral = ['2.1','2.2','2.3','2.4','custom2'];
 
-if (tree.includes(active)){
-var progressBar = document.getElementsByClassName('progress-bar')[0]
-function updateProgressBar() {
-    var totalamt = parseFloat(localStorage.getItem('totalamt')) || 0;
-
-    var limit = 1000000;
-    var width = (totalamt / limit) * 100;
-    width = Math.min(width, 100);
-
-    progressBar.style.setProperty('--width', width + '%');
-}
-}
-else if (coral.includes(active)){
-var progressBar2 = document.getElementsByClassName('progress-bar2')[0]
-function updateProgressBar() {
-    var totalamt2 = parseFloat(localStorage.getItem('totalamt2')) || 0;
-
-    var limit = 1000000;
-    var width = (totalamt2 / limit) * 100;
-    width = Math.min(width, 100);
-
-    progressBar2.style.setProperty('--width', width + '%');
-}
-}
-
+var nonoptional;
 
 function donateinfo(){
 
@@ -217,5 +224,4 @@ else if (kind === 'coral'){
     var hs2 = document.getElementById('history');
     hs2.appendChild(cdclone);
 }
-
 
