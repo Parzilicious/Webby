@@ -79,12 +79,16 @@ function donatecalc(){
     var tree = ['1','2','3','4','custom'];
     var coral = ['2.1','2.2','2.3','2.4','custom2'];
 
-    if (tree.includes(active)) {
+   if (tree.includes(active)) {
         sessionStorage.setItem('kind', 'tree');
         sessionStorage.setItem('amt', amt);
 
+        var amtValue = parseFloat(amt) || 0;  
+    
+        sessionStorage.setItem('amt', amtValue);
+
         var totalamt = parseFloat(sessionStorage.getItem('totalamt'));
-        totalamt += amt;
+        totalamt += amtValue;
         sessionStorage.setItem('totalamt', totalamt.toString());
     
         console.log(totalamt);
