@@ -20,34 +20,50 @@
     </div>
     <div class="fieldset-container">
     <fieldset>
-            <h2>My Donation of (Amount)</h2>
+            <h2 id="don"></h2>
             <div class="name">
                 <div class="fname">
                     <label for="">First Name</label>
-                    <input type="text" name="" id="">
+                    <input id="fname" type="text" name="" id="" placeholder="First Name*">
                 </div>
                 <div class="lname">
                     <label for="">Last Name</label>
-                    <input type="text">
+                    <input id="lname" type="text" placeholder="Last Name*">
                 </div>
+            </div>
+            <div class="name-text">
+                <p>Optional: Name will be displayed on Website</p>
             </div>
             <div class="card">
                 <label for="">Card Number</label>
-                <input type="text">
+                <input id="card" type="text" placeholder="Card Number">
             </div>
-            <div class="email">
+            <div  class="email">
                 <label for="">Email Address</label>
-                <input type="text">
+                <input id="email" type="text" placeholder="E-mail">
             </div>
             <div class="phone">
                 <label for="">Phone Number</label>
-                <input type="text">
+                <input id="phone" type="text" placeholder="e.g 999-999-9999">
+                <div class="number-text">
+                    <p>Optional: To Recieve Notifications</p>
+                </div>
             </div>
             <div class="message">
-                <label for="">Message (Optional)</label>
-                <textarea name="" id="" cols="30" rows="5"></textarea>
+                <label for="">Message</label>
+                <textarea id="msg" name="" id="" cols="30" rows="5" maxlength="20" placeholder="Optional:(to display on website)Maximum of 20 characters..."></textarea>
+            </div>
+            <div class="button">
+                <button onclick="donateinfo()">Donate</button>
             </div>
         </fieldset>
     </div>
 </body>
+     <script src="index.js"></script>
+    <script>
+    function don(){
+        var amt = localStorage.getItem('amt');
+        document.getElementById('don').textContent = "Donating an Amount of " + amt;
+    }
+    </script>
 </html>
