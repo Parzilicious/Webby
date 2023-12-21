@@ -54,6 +54,10 @@ function donatecalc(){
         var custom = document.getElementById(active);
         amt = parseFloat(custom.value);
     }
+    else {
+        alert('Select a donation first');
+        return;
+    }
 
     var tree = ['1','2','3','4','custom'];
     var coral = ['2.1','2.2','2.3','2.4','custom2'];
