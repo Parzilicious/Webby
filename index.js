@@ -1,9 +1,9 @@
 var active;
 var totalamt = 0;
 var totalamt2 = 0;
-localStorage.setItem('name2', document.getElementById('name').textContent);
-localStorage.setItem('msgd2', document.getElementById('msgd').textContent);
-localStorage.setItem('amtd2', document.getElementById('amtd').textContent);
+sessionStorage.setItem('name2', document.getElementById('name').textContent);
+sessionStorage.setItem('msgd2', document.getElementById('msgd').textContent);
+sessionStorage.setItem('amtd2', document.getElementById('amtd').textContent);
 
 document.addEventListener('click', function(event) {
     var on = event.target;
@@ -23,8 +23,8 @@ document.addEventListener('click', function(event) {
 
 var amt;
 var amt2 =0; 
-localStorage.setItem('amt', amt);
-localStorage.setItem('amt2', amt2);
+sessionStorage.setItem('amt', amt);
+sessionStorage.setItem('amt2', amt2);
 
 function donatecalc(){
     if(active === '1'){  
@@ -80,25 +80,25 @@ function donatecalc(){
     var coral = ['2.1','2.2','2.3','2.4','custom2'];
 
     if (tree.includes(active)) {
-        localStorage.setItem('kind', 'tree');
-        localStorage.setItem('amt', amt);
+        sessionStorage.setItem('kind', 'tree');
+        sessionStorage.setItem('amt', amt);
 
-        var totalamt = parseFloat(localStorage.getItem('totalamt'));
+        var totalamt = parseFloat(sessionStorage.getItem('totalamt'));
         totalamt += amt;
-        localStorage.setItem('totalamt', totalamt.toString());
+        sessionStorage.setItem('totalamt', totalamt.toString());
     
         console.log(totalamt);
     }
     else if (coral.includes(active)) {
-        localStorage.setItem('kind', 'coral');
+        sessionStorage.setItem('kind', 'coral');
     
         var amt2Value = parseFloat(amt2) || 0;  
     
-        localStorage.setItem('amt2', amt2Value);
+        sessionStorage.setItem('amt2', amt2Value);
     
-        var totalamt2 = parseFloat(localStorage.getItem('totalamt2')) || 0;
+        var totalamt2 = parseFloat(sessionStorage.getItem('totalamt2')) || 0;
         totalamt2 += amt2Value;
-        localStorage.setItem('totalamt2', totalamt2.toString());
+        sessionStorage.setItem('totalamt2', totalamt2.toString());
     
         console.log(totalamt2);
     }
@@ -108,13 +108,13 @@ function donatecalc(){
 
 }
 
-console.log(localStorage.getItem('totalamt'));
-console.log(localStorage.getItem('totalamt2'));
+console.log(sessionStorage.getItem('totalamt'));
+console.log(sessionStorage.getItem('totalamt2'));
 
 var pbar = document.getElementById('pbar');
 
 function pbarTree() {
-  var totalamt = parseFloat(localStorage.getItem('totalamt')) || 0;
+  var totalamt = parseFloat(sessionStorage.getItem('totalamt')) || 0;
 
   var limit = 1000000;
   var width = (totalamt / limit) * 100;
@@ -130,7 +130,7 @@ pbarTree();
 var pbar2 = document.getElementById('pbar2');
 
 function pbarCoral() {
-  var totalamt2 = parseFloat(localStorage.getItem('totalamt2')) || 0;
+  var totalamt2 = parseFloat(sessionStorage.getItem('totalamt2')) || 0;
 
   var limit = 1000000;
   var width = (totalamt2 / limit) * 100;
@@ -156,7 +156,7 @@ function donateinfo(){
     var email = document.getElementById("email");
     var phone = document.getElementById("phone");
     var msg = document.getElementById("msg");
-    var amt1 = localStorage.getItem('amt');
+    var amt1 = sessionStorage.getItem('amt');
 
     nonoptional = [card.value , email.value];
 
@@ -165,17 +165,17 @@ function donateinfo(){
         return;
     } else {
         console.log('All non-optional fields have values.');
-        var sname = localStorage.getItem('name2');
-        var smsgd = localStorage.getItem('msgd2');
-        var samtd = localStorage.getItem('amtd2');
+        var sname = sessionStorage.getItem('name2');
+        var smsgd = sessionStorage.getItem('msgd2');
+        var samtd = sessionStorage.getItem('amtd2');
     
         sname = fname.value + '' + lname.value;
         smsgd = msg.value;
         samtd = amt1;
 
-        localStorage.setItem('name3', sname);
-        localStorage.setItem('msgd3', smsgd);
-        localStorage.setItem('amtd3', samtd);
+        sessionStorage.setItem('name3', sname);
+        sessionStorage.setItem('msgd3', smsgd);
+        sessionStorage.setItem('amtd3', samtd);
 
         console.log(sname);
         console.log(smsgd);
@@ -188,11 +188,11 @@ function donateinfo(){
 
 }
 
-var name3 = localStorage.getItem('name3');
-var msgd3 = localStorage.getItem('msgd3');
-var amtd3 = localStorage.getItem('amtd3');
+var name3 = sessionStorage.getItem('name3');
+var msgd3 = sessionStorage.getItem('msgd3');
+var amtd3 = sessionStorage.getItem('amtd3');
 
-var kind = localStorage.getItem('kind');
+var kind = sessionStorage.getItem('kind');
 var treedon = document.getElementById('treedon');
 var coraldon = document.getElementById('coraldon');
 
@@ -224,4 +224,5 @@ else if (kind === 'coral'){
     var hs2 = document.getElementById('history');
     hs2.appendChild(cdclone);
 }
+
 
