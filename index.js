@@ -1,4 +1,6 @@
 var active;
+var totalamt = 0;
+var totalamt2 = 0;
 localStorage.setItem('name2', document.getElementById('name').textContent);
 localStorage.setItem('msgd2', document.getElementById('msgd').textContent);
 localStorage.setItem('amtd2', document.getElementById('amtd').textContent);
@@ -20,6 +22,9 @@ document.addEventListener('click', function(event) {
 });
 
 var amt;
+var amt2;
+localStorage.setItem('amt', amt);
+localStorage.setItem('amt2', amt2);
 
 function donatecalc(){
     if(active === '1'){  
@@ -32,19 +37,19 @@ function donatecalc(){
         amt = 500;
     }
     else if(active === '4'){
-        amt = 1000;
+        amt = 10000;
     }
     else if(active === '2.1'){
-        amt = 1000;
+        amt2 = 1000;
     }
     else if(active === '2.2'){
-        amt = 2000;
+        amt2 = 2000;
     }
     else if(active === '2.3'){
-        amt = 3000;
+        amt2 = 3000;
     }
     else if(active === '2.4'){
-        amt = 5000;
+        amt2 = 5000;
     }
     else if(active === 'custom'){
         var custom = document.getElementById(active);
@@ -59,7 +64,7 @@ function donatecalc(){
     else if(active === 'custom2'){
         var custom = document.getElementById(active);
         if (!isNaN(parseFloat(custom2.value))) {
-            amt = parseFloat(custom2.value);
+            amt2 = parseFloat(custom2.value);
         }
         else {
             alert('Input is not a number');
@@ -76,12 +81,27 @@ function donatecalc(){
 
     if (tree.includes(active)) {
         localStorage.setItem('kind', 'tree');
+        localStorage.setItem('amt', amt);
+
+        let totalamt = parseFloat(localStorage.getItem('totalamt'));
+        totalamt += amt;
+        localStorage.setItem('totalamt', totalamt.toString());
+    
+        console.log(totalamt);
+    
     }
     else if (coral.includes(active)){
-        localStorage.setItem('kind', 'coral')
+        localStorage.setItem('kind', 'coral');
+
+        localStorage.setItem('amt2', amt2);
+
+        let totalamt2 = parseFloat(localStorage.getItem('totalamt2'));
+        totalamt2 += amt2;
+        localStorage.setItem('totalamt2', totalamt2.toString());
+    
+        console.log(totalamt2);
     }
 
-    localStorage.setItem('amt', amt);
 
     var info = document.getElementById('info');
       info.click();
@@ -89,6 +109,37 @@ function donatecalc(){
 }
 
 var nonoptional;
+console.log(localStorage.getItem('totalamt'));
+console.log(localStorage.getItem('totalamt2'));
+
+var tree = ['1','2','3','4','custom'];
+var coral = ['2.1','2.2','2.3','2.4','custom2'];
+
+if (tree.includes(active)){
+var progressBar = document.getElementsByClassName('progress-bar')[0]
+function updateProgressBar() {
+    var totalamt = parseFloat(localStorage.getItem('totalamt')) || 0;
+
+    var limit = 1000000;
+    var width = (totalamt / limit) * 100;
+    width = Math.min(width, 100);
+
+    progressBar.style.setProperty('--width', width + '%');
+}
+}
+else if (coral.includes(active)){
+var progressBar2 = document.getElementsByClassName('progress-bar2')[0]
+function updateProgressBar() {
+    var totalamt2 = parseFloat(localStorage.getItem('totalamt2')) || 0;
+
+    var limit = 1000000;
+    var width = (totalamt2 / limit) * 100;
+    width = Math.min(width, 100);
+
+    progressBar2.style.setProperty('--width', width + '%');
+}
+}
+
 
 function donateinfo(){
 
@@ -166,5 +217,6 @@ else if (kind === 'coral'){
     var hs2 = document.getElementById('history');
     hs2.appendChild(cdclone);
 }
+
 
 
