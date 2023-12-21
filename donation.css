@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-image: url(33136.jpg);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#2596be;
+}
+
+header img {
+    width: 50px;
+    display: none;
+ }
+
+header .group-name {
+    color: white ;
+    font-weight: 1000;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: larger;
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    list-style: none;
+    margin-left: 20px;
+    
+}
+
+header ul li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    color: white;
+    border-radius: 10px;
+}
+
+header ul li a:hover {
+    background: white;
+    color: black;
+    transition: .3s;
+}
+
+fieldset {
+    width: fit-content;
+    border-radius: 20px;
+    background-color: #2596be;
+    border: none;
+    color: white;
+}
+
+.fieldset-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    margin-bottom: 50px;
+}
+
+fieldset h2 {
+    display: flex;
+    justify-content: center;
+    
+}
+
+fieldset label {
+    margin-bottom: 5px;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.fname, .lname {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.fname input {
+    margin-right: 20px;
+}
+
+.card,
+.email,
+.phone,
+.message{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.message textarea {
+    border-radius: 10px;
+    border: none;
+}
+
+@media only screen and (max-width:700px) {
+ 
+    body {
+       background-size: cover;
+       background-position: center;
+    }
+
+    body {
+        background-position: center;
+     }
+  
+     header ul {
+         width: 100%;
+         background-color: #388494;
+         position: absolute;
+         top: 90px;
+         right: 0;
+         z-index: 2;
+         padding: 20px;
+     }
+  
+     header .group-name {
+         margin-left: 50px;
+         color: white;
+     }
+  
+     header ul li a {
+         color: white;
+     }
+  
+     header img {
+         display: block;
+         margin-right: -90px;
+     }
+ 
+     header img {
+         width: 50px;
+         filter: invert(100%);
+      }
+
+     h2 {
+        font-size: large;
+  }
+
+    .fname input{
+    width: 85%;
+    }
+
+
+    .lname input {
+        width: 100%;
+    }
+
+    .card input, 
+    .email input,
+    .phone input,
+    .message input {
+        width: 100%;
+    }
+
+    textarea {
+        width: 100%;
+    }
+
+    fieldset {
+        width: 90%;
+    }
+
+    .fieldset-container {
+        margin-bottom: 50px;
+    }
+
+    
+      
+
+}
