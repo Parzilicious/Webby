@@ -312,7 +312,7 @@
     color: black;
  }
 
- .tree-donations h2{
+  #history h2{
    display: flex;
    justify-content: center;
    margin-top: 100px;
