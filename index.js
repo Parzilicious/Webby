@@ -48,11 +48,15 @@ function donatecalc(){
     }
     else if(active === 'custom'){
         var custom = document.getElementById(active);
-        amt = parseFloat(custom.value);
+        if (!isNaN(parseFloat(custom.value))) {
+            amt = parseFloat(custom.value);
+        }
     }
     else if(active === 'custom2'){
         var custom = document.getElementById(active);
-        amt = parseFloat(custom.value);
+        if (!isNaN(parseFloat(custom2.value))) {
+            amt = parseFloat(custom2.value);
+        }
     }
     else {
         alert('Select a donation first');
