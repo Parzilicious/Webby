@@ -20,19 +20,18 @@
             <img src="menu.png" onclick="toggleMenu()">
         </header>
     </div>
-   <div class="counter-container">
+    <div class="counter-container">
         <div class="trees-container">
             <h3>Trees Planted</h3>
             <div class="progress-bar1" data-label1="0"></div>
             <div class="trees">
                 <h2 class="trees-text">Help us plant Trees</h2>
-                <p class="trees-text">₱50 = 1 tree</p>
                 <div class="amounts1">
-                    <button id="1" onclick="donate(50)">50</button>
-                    <button id="2" onclick="donate(100)"><b>100</b></button>
-                    <button id="3" onclick="donate(500)"><b>500</b></button>
-                    <button id="4" onclick="donate(1000)"><b>1000</b></button>
-                    <input class="custom1" id="custom" type="text" placeholder="Custom: Enter Amount then click donate">
+                    <button id="1">50</button>
+                    <button id="2"><b>100</b></button>
+                    <button id="3"><b>500</b></button>
+                    <button id="4"><b>1000</b></button>
+                    <input class="custom" id="custom" type="text" placeholder="Custom: Enter Amount then click donate">
                     <button class="donate" id="donate" onclick="donatecalc()"><b>DONATE</b></button>
                 </div>
             </div>
@@ -42,44 +41,46 @@
             <div class="progress-bar2" data-label2="0"></div>
             <div class="corals">
                 <h2 class="corals-text">&nbspHelp us make <br> Artificial Reefs</h2>
-                <p class="corals-text">₱1000 = 1 Artificial Coral</p>
                 <div class="amounts2">
-                    <button id="2.1" onclick="donate(1000)"><b>1000</b></button>
-                    <button id="2.2" onclick="donate(2000)"><b>2000</b></button>
-                    <button id="2.3" onclick="donate(3000)"><b>3000</b></button>
-                    <button id="2.4" onclick="donate(5000)"><b>5000</b></button>
-                    <input class="custom2" id="custom2" type="text" placeholder="Custom: Enter Amount then click donate">
+                    <button id="2.1"><b>1000</b></button>
+                    <button id="2.2"><b>2000</b></button>
+                    <button id="2.3"><b>3000</b></button>
+                    <button id="2.4"><b>5000</b></button>
+                    <input class="custom" id="custom2" type="text" placeholder="Custom: Enter Amount then click donate">
                     <button class="donate" id="donate2" onclick="donatecalc()"><b>DONATE</b></button>
+                    <a id="info"href="donation.html"></a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="tree-donations">
+    <div id="history">
         <h2>Recent Donations</h2>
+    <div id='treedon'class="tree-donations">
             <div class="donation-details">
                 <div class="donation-bar">
                     <div class="name-message">
-                        <h3>Jahrell Audrey Bugtai</h3>
-                        <p>"Saving the earth is priceless"</p>
+                        <h3 id="name">Jahrell Audrey Bugtai</h3>
+                        <p id="msgd">"Saving the earth is priceless"</p>
                     </div>
                     <div class="num-trees">
-                        <h3>50 Trees</h3>
+                        <h3 id="amtd">50 Trees</h3>
                     </div>
                 </div>
             </div>
     </div>
-    <div class="corals-donations">
+    <div id='coraldon'class="corals-donations">
             <div class="donation-details">
                 <div class="donation-bar">
                     <div class="name-message">
-                        <h3>Joseph Bentits</h3>
-                        <p>"Aqua is water, H2o is tubig"</p>
+                        <h3 id="name2">Joseph Bentits</h3>
+                        <p id="msgd2">"Aqua is water, H2o is tubig"</p>
                     </div>
                     <div class="num-corals">
-                        <h3>1 Coral</h3>
+                        <h3 id="amtd2">1 Coral</h3>
                     </div>
                 </div>
             </div>
+    </div>
     </div>
     <div class="socials-container">
         <h2>Triple J Socials</h2>
@@ -89,23 +90,20 @@
             <a href=""><img class="icon" src="yt.png" alt=""></a>
         </div>
     </div>
-    
     <script>
 
         var menuList = document.getElementById("menuList");
-        
-        menuList.style.maxHeight = "0px";
 
         function toggleMenu() {
-            if(menuList.style.maxHeight == "0px" || menuList.style.maxHeight === "") {
-                menuList.style.maxHeight = "130px";
+            if (menuList.style.display === '' || menuList.style.display === 'none') {
+                menuList.style.display = 'flex';
+            } else {
+                menuList.style.display = 'none';
             }
-            else {
-                menuList.style.maxHeight = "0px";
-            }
-
         }
 
+
     </script>
+    <script src="index.js"></script>
 </body>
 </html>
