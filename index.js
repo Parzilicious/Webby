@@ -213,6 +213,7 @@ function donateinfo(){
         console.log(smsgd);
 
         var home = document.getElementById('homepage');
+        alert("Thank You for Donating");
         home.click();
 
     }
