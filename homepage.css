@@ -112,7 +112,8 @@
    height: 3em;
    background-color: #25A18E;
    border-radius: 1.5em;
-   color: white;
+   color: black;
+   font-weight: bold;
 }
 .progress-bar::before{
    content: attr(data-label);
@@ -140,11 +141,14 @@
    width: var(--width, 0);
    min-width: 2rem;
    max-width: calc(100%-1em);
-   background-color: blue;
+   background-color: lightblue;
    border-radius: 1em;
    padding: 1em;
 }
 
+.goal{
+   font-weight: bold !important;
+}
  
  .donation-container {
     display: flex;
@@ -198,7 +202,13 @@
    padding: 15px;
    margin-top: 10px; 
    text-align: center;
+   border-radius: 10px;
  }
+
+ .amounts1 input.custom,
+.amounts2 input.custom{
+   color:black;
+}
  
  .corals-container {
     display: flex;
@@ -264,6 +274,19 @@
     font-size: medium;
  }
 
+.trees2-text{
+   display: flex;
+   justify-content: center;
+   margin-top: 75px;
+   font-size: small;
+}
+.corals2-text{
+   display: flex;
+   justify-content: center;
+   margin-top: 90px;
+   font-size: small;
+}
+
  .custom2  {
     width: 100%;
     border-radius: 10px;
@@ -309,6 +332,7 @@
    justify-content: center;
    margin-top: 100px;
    font-size: xx-large;
+   color: white;
  }
 
  .donation-bar {
@@ -388,11 +412,11 @@
  
  .progress-bar,.progress-bar2 {
    position: relative;
-   width: 500px;
+   width: 90%;
    height: 3em;
    background-color: #25A18E;
    border-radius: 1.5em;
-   color: white;
+   color: black;
 }
 .progress-bar::before{
    content: attr(data-label);
@@ -424,7 +448,6 @@
    border-radius: 1em;
    padding: 1em;
 }
-
  
  .donation-container {
     display: flex;
@@ -432,6 +455,18 @@
     justify-content: space-around;
     margin-top: 50px
  }
+ .trees2-text{
+   display: flex;
+   justify-content: center;
+   margin-top: 75px;
+   font-size: small;
+}
+.corals2-text{
+   display: flex;
+   justify-content: center;
+   margin-top: 60px;
+   font-size: small;
+}
  
  .trees {
     padding: 20px; 
@@ -466,9 +501,10 @@
 .amounts1 button.donate,
 .amounts2 button.donate{
    width: 100%;
-   padding: 15px;
+   padding: 10px;
    margin-top: 10px; 
    text-align: center;
+   border-radius: 10px;
  }
  
  .corals-container {
@@ -563,6 +599,16 @@
    margin-top: -30px;
  }
 
+ button:hover {
+   background-color: white;
+   color: black;
+   transition: ease .3s;
+ }
+ 
+button:focus {
+   background-color: white;
+   color: black;
+}
  
  }
  
