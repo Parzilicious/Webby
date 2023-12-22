@@ -63,9 +63,19 @@
 </body>
      <script src="index.js"></script>
     <script>
-    function don(){
+    function don() {
+    var active = sessionStorage.getItem('active'); 
+    console.log(active);
+    var tree = ['1', '2', '3', '4', 'custom'];
+    var coral = ['2.1', '2.2', '2.3', '2.4', 'custom2'];
+
+    if (tree.includes(active)) {
         var amt = sessionStorage.getItem('amt');
         document.getElementById('don').textContent = "Donating an Amount of " + amt;
+    } else if (coral.includes(active)) {
+        var amt2 = sessionStorage.getItem('amt2');
+        document.getElementById('don').textContent = "Donating an Amount of " + amt2;
+    }
     }
     </script>
 </html>
