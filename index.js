@@ -4,6 +4,7 @@ var totalamt2 = 0;
 sessionStorage.setItem('name2', document.getElementById('name').textContent);
 sessionStorage.setItem('msgd2', document.getElementById('msgd').textContent);
 sessionStorage.setItem('amtd2', document.getElementById('amtd').textContent);
+sessionStorage.setItem('amtd22', document.getElementById('amtd').textContent);
 
 document.addEventListener('click', function(event) {
     var on = event.target;
@@ -13,11 +14,13 @@ document.addEventListener('click', function(event) {
     if (on.tagName.toLowerCase() === 'button' && buttons.includes(on.id)) {
         console.log('Button with id ' + on.id + ' clicked.');
         active = on.id;
+        sessionStorage.setItem('active',active);
     }
 
     else if (on.tagName.toLowerCase() === 'input' && inputs.includes(on.id)) {
         console.log('Input with id ' + on.id + ' clicked.');
         active = on.id;
+        sessionStorage.setItem('active',active);
     }
 });
 
@@ -122,6 +125,7 @@ function pbarTree() {
   var limit = 1000000;
   var width = (totalamt / limit) * 100;
   width = Math.min(width, 100);
+  width = width.toFixed(2);
 
   pbar.style.setProperty('--width', width + '%');
   pbar.setAttribute('data-label', width + '%');
@@ -138,6 +142,7 @@ function pbarCoral() {
   var limit = 1000000;
   var width = (totalamt2 / limit) * 100;
   width = Math.min(width, 100);
+  width = width.toFixed(2);
 
   pbar2.style.setProperty('--width', width + '%');
   pbar2.setAttribute('data-label2', width + '%');
@@ -160,40 +165,65 @@ function donateinfo(){
     var phone = document.getElementById("phone");
     var msg = document.getElementById("msg");
     var amt1 = sessionStorage.getItem('amt');
+    var amt2 = sessionStorage.getItem('amt2');
+
 
     nonoptional = [card.value , email.value];
+
+    if (phone.value) {
+        if (phone.value.length !== 11 ||  isNaN(card.value)) {
+          alert("Invalid phone number. It must be 11 digits and is a number.");
+          return;
+        } else {
+          console.log(phone.value);
+        }
+      }
+      
+      if (card.value) {
+        if (card.value.length < 11 || card.value.length > 19 ||  isNaN(card.value)) {
+          alert("Invalid Card Number. It must be around 16-19 digits long and is a number");
+          return;
+        } else {
+          console.log(card.value);
+        }
+      }
 
     if (nonoptional.some(field => field === "")) {
         alert('At least one required field is empty.');
         return;
-    } else {
+    }
+    else {
         console.log('All non-optional fields have values.');
         var sname = sessionStorage.getItem('name2');
         var smsgd = sessionStorage.getItem('msgd2');
         var samtd = sessionStorage.getItem('amtd2');
+        var samtd1 = sessionStorage.getItem('amtd22');
     
         sname = fname.value + '' + lname.value;
         smsgd = msg.value;
         samtd = amt1;
+        samtd1 = amt2;
 
         sessionStorage.setItem('name3', sname);
         sessionStorage.setItem('msgd3', smsgd);
         sessionStorage.setItem('amtd3', samtd);
+        sessionStorage.setItem('amtd32', samtd1);
 
         console.log(sname);
         console.log(smsgd);
-        console.log(samtd);
 
         var home = document.getElementById('homepage');
         home.click();
 
     }
-
 }
+
 
 var name3 = sessionStorage.getItem('name3');
 var msgd3 = sessionStorage.getItem('msgd3');
 var amtd3 = sessionStorage.getItem('amtd3');
+var amtd32 = sessionStorage.getItem('amtd32');
+
 
 var kind = sessionStorage.getItem('kind');
 var treedon = document.getElementById('treedon');
@@ -208,7 +238,7 @@ if (kind === 'tree'){
 
         nameElement.textContent = name3;
         msgdElement.textContent = msgd3;
-        amtdElement.textContent = amtd3 + ' trees';
+        amtdElement.textContent = "₱" + amtd3 + " for the trees";
 
         var hs = document.getElementById('history');
         hs.appendChild(tdclone);
@@ -222,7 +252,7 @@ else if (kind === 'coral'){
 
     nameElement.textContent = name3;
     msgdElement.textContent = msgd3;
-    amtdElement.textContent = amtd3 + ' corals';
+    amtdElement.textContent = "₱" + amtd32 + " for the corals";
 
     var hs2 = document.getElementById('history');
     hs2.appendChild(cdclone);
