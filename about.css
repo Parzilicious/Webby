@@ -9,6 +9,7 @@ body {
     background-image: url(underwater.jpg);
     background-size: cover;
     background-position-y: 10%;
+    background-position-y: 30%;
 }
 
 header {
